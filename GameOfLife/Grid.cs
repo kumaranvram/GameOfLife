@@ -60,7 +60,16 @@ namespace GameOfLife
                 rows[i].NextRow = rows[i + 1];
             }
             numberOfColumns = rows[0].GetColumnCount();
+        }
 
+        private void PrepareForNextGeneration()
+        {
+            CheckForAdditionalColumnsAndRows();
+            DecideStatusForNextGeneration();
+        }
+
+        private void CheckForAdditionalColumnsAndRows()
+        {
             if (rows[0].IsNewRowNeeded())
             {
                 int count = rows[0].GetColumnCount();
@@ -71,26 +80,24 @@ namespace GameOfLife
             }
 
             if (rows[rows.Count - 1].IsNewRowNeeded())
-            {                 
+            {
                 Row row = new Row(numberOfColumns);
                 row.PreviousRow = rows[numberOfRows - 1];
-                rows[numberOfRows - 1].NextRow = row;                
+                rows[numberOfRows - 1].NextRow = row;
                 AddRowToEnd(row);
-            }      
+            }
 
-            if(IsNewColumnNeededAtLeft())
-            {                
+            if (IsNewColumnNeededAtLeft())
+            {
                 AddNewColumnAtStart();
                 numberOfColumns++;
             }
-            
-            if(IsNewColumnNeededAtRight())
-            {                
+
+            if (IsNewColumnNeededAtRight())
+            {
                 AddNewColumnAtEnd();
                 numberOfColumns++;
             }
-             
-            DecideStatusForNextGeneration();
         }
 
         private void AddNewColumnAtEnd()
@@ -147,6 +154,7 @@ namespace GameOfLife
 
         public void AdvanceToNextGeneration()
         {
+            PrepareForNextGeneration();
             for (int rowIndex = 0; rowIndex < numberOfRows; rowIndex++)
             {
                 rows[rowIndex].AdvanceToNextGeneration();

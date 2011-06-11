@@ -37,7 +37,7 @@ namespace GameOfLife
         public Row(String rowPattern) : this()
         {
             rowPattern = rowPattern.Trim();
-            char[] splitPattern = "\t".ToCharArray();
+            char[] splitPattern = " ".ToCharArray();
             String[] columns = rowPattern.Split(splitPattern);
             for (int i = 0; i < columns.Length; i++)
             {
@@ -57,7 +57,7 @@ namespace GameOfLife
 
         public bool IsNewRowNeeded()
         {
-            return ToString().Contains("X\tX\tX");
+            return ToString().Contains("X X X");
         }
 
         public void DecideStatusForRow()
@@ -184,7 +184,7 @@ namespace GameOfLife
             String rowString = "";
             for (int index = 0; index < cells.Count - 1; index++)
             {
-                rowString = rowString + cells[index].CurrentValue + "\t";
+                rowString = rowString + cells[index].CurrentValue + " ";
             }
             rowString = rowString + cells[cells.Count - 1] + "\n";
             return rowString.ToString();

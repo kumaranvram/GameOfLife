@@ -70,8 +70,8 @@ namespace GameOfLifeTest
         [TestMethod()]
         public void ToStringTest()
         {
-            Row target = new Row("X\tX\tX\n"); // TODO: Initialize to an appropriate value
-            string expected = "X\tX\tX\n"; // TODO: Initialize to an appropriate value
+            Row target = new Row("X X X\n"); // TODO: Initialize to an appropriate value
+            string expected = "X X X\n"; // TODO: Initialize to an appropriate value
             string actual;
             actual = target.ToString();
             Assert.AreEqual(expected, actual);
@@ -84,8 +84,8 @@ namespace GameOfLifeTest
         [TestMethod()]
         public void RowConstructorTest()
         {
-            Row target = new Row("X\t-\tX\n");
-            string expected = "X\t-\tX\n"; // TODO: Initialize to an appropriate value
+            Row target = new Row("X - X\n");
+            string expected = "X - X\n"; // TODO: Initialize to an appropriate value
             string actual;
             actual = target.ToString();
             Assert.AreEqual(expected, actual);
@@ -98,7 +98,7 @@ namespace GameOfLifeTest
         [TestMethod()]
         public void GetColumnCountTest()
         {
-            Row target = new Row("X\t-\tX\n"); // TODO: Initialize to an appropriate value
+            Row target = new Row("X - X\n"); // TODO: Initialize to an appropriate value
             int expected = 3; // TODO: Initialize to an appropriate value
             int actual;
             actual = target.GetColumnCount();
@@ -107,13 +107,42 @@ namespace GameOfLifeTest
         }
 
         /// <summary>
+        ///A test for GetColumnCount
+        ///</summary>
+        [TestMethod()]
+        public void GetColumnCountTest1()
+        {
+            Row target = new Row("X - X - X\n"); // TODO: Initialize to an appropriate value
+            int expected = 5; // TODO: Initialize to an appropriate value
+            int actual;
+            actual = target.GetColumnCount();
+            Assert.AreEqual(expected, actual);
+            //Assert.Inconclusive("Verify the correctness of this test method.");
+        }
+
+
+        /// <summary>
         ///A test for IsNewRowNeeded
         ///</summary>
         [TestMethod()]
         public void IsNewRowNeededTest()
         {
-            Row target = new Row("X\tX\tX\t-\n"); // TODO: Initialize to an appropriate value
+            Row target = new Row("X X X -\n"); // TODO: Initialize to an appropriate value
             bool expected = true; // TODO: Initialize to an appropriate value
+            bool actual;
+            actual = target.IsNewRowNeeded();
+            Assert.AreEqual(expected, actual);
+            //Assert.Inconclusive("Verify the correctness of this test method.");
+        }
+
+        /// <summary>
+        ///A test for IsNewRowNeeded
+        ///</summary>
+        [TestMethod()]
+        public void IsNewRowNeededTest1()
+        {
+            Row target = new Row("X - X -\n"); // TODO: Initialize to an appropriate value
+            bool expected = false; // TODO: Initialize to an appropriate value
             bool actual;
             actual = target.IsNewRowNeeded();
             Assert.AreEqual(expected, actual);

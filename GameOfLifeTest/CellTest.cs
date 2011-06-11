@@ -13,6 +13,8 @@ namespace GameOfLifeTest
     [TestClass()]
     public class CellTest
     {
+
+
         private TestContext testContextInstance;
 
         /// <summary>
@@ -72,7 +74,6 @@ namespace GameOfLifeTest
             Cell target = new Cell(value);
             string actual = target.ToString();
             Assert.AreEqual(actual, value);
-            //Assert.Inconclusive("TODO: Implement code to verify target");
         }
 
         /// <summary>
@@ -113,7 +114,8 @@ namespace GameOfLifeTest
              // TODO: Initialize to an appropriate value
             string actual;
             actual = target.ToString();
-            Assert.AreEqual(expected, actual);            
+            Assert.AreEqual(expected, actual);
+            //Assert.Inconclusive("Verify the correctness of this test method.");
         }
     }
 }
