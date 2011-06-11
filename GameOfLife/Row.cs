@@ -167,10 +167,7 @@ namespace GameOfLife
         public void AddColumnAtStart()
         {            
             Cell cell = new Cell("-");
-            cells.Add(new Cell());
-            for (int i = cells.Count-1; i > 0; i--)
-                cells[i] = cells[i - 1];
-            cells[0] = cell;            
+            cells.Insert(0, cell);            
         }
 
         public void AddColumnAtEnd()

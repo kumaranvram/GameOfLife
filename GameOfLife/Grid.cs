@@ -27,10 +27,7 @@ namespace GameOfLife
         private void AddRowToStart(Row row)
         {
             List<Row> rowNew = new List<Row>();
-            rowNew.Add(row);
-            for (int i = 0; i < numberOfRows; i++)
-                rowNew.Add(rows[i]);
-            rows = rowNew;
+            rows.Insert(0, row);            
             numberOfRows++;
         }
 
