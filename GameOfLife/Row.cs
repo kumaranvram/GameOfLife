@@ -27,11 +27,37 @@ namespace GameOfLife
         {
             get { return nextRow; }
             set { nextRow = value; }
-        }
+        }        
         
         public Row()
         {
             cells = new List<Cell>();            
+        }
+
+        public Row(String rowPattern) : this()
+        {
+            rowPattern = rowPattern.Trim();
+            char[] splitPattern = "\t".ToCharArray();
+            String[] columns = rowPattern.Split(splitPattern);
+            for (int i = 0; i < columns.Length; i++)
+            {
+                Cell cell = new Cell(columns[i]);
+                cells.Add(cell);
+            }
+        }
+
+        public Row(int cellsCount) : this()
+        {
+            for (int i = 0; i < cellsCount; i++)
+            {
+                Cell cell = new Cell("-");
+                cells.Add(cell);
+            }
+        }
+
+        public bool IsNewRowNeeded()
+        {
+            return ToString().Contains("X\tX\tX");
         }
 
         public void DecideStatusForRow()
@@ -137,7 +163,21 @@ namespace GameOfLife
             cells[columnIndex].NumberOfNeighborsAlive = neighbors;
             cells[columnIndex].DecideStatus();
         }
-        
+
+        public void AddColumnAtStart()
+        {            
+            Cell cell = new Cell("-");
+            cells.Add(new Cell());
+            for (int i = cells.Count-1; i > 0; i--)
+                cells[i] = cells[i - 1];
+            cells[0] = cell;            
+        }
+
+        public void AddColumnAtEnd()
+        {
+            Cell cell = new Cell("-");
+            cells.Add(cell);
+        }
 
         public override String ToString()
         {
@@ -148,18 +188,6 @@ namespace GameOfLife
             }
             rowString = rowString + cells[cells.Count - 1] + "\n";
             return rowString.ToString();
-        }
-
-        public Row(String rowPattern) : this()
-        {            
-            rowPattern = rowPattern.Trim();            
-            char[] splitPattern = " ".ToCharArray();
-            String[] columns = rowPattern.Split(splitPattern);
-            for (int i = 0; i < columns.Length; i++)
-            {
-                Cell cell = new Cell(columns[i]);                
-                cells.Add(cell);
-            }            
         }
 
         public Int32 GetColumnCount()

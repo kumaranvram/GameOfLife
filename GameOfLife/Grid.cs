@@ -24,6 +24,22 @@ namespace GameOfLife
             LoadPattern(pattern);
         }
 
+        private void AddRowToStart(Row row)
+        {
+            List<Row> rowNew = new List<Row>();
+            rowNew.Add(row);
+            for (int i = 0; i < numberOfRows; i++)
+                rowNew.Add(rows[i]);
+            rows = rowNew;
+            numberOfRows++;
+        }
+
+        private void AddRowToEnd(Row row)
+        {
+            rows.Add(row);
+            numberOfRows++;
+        }
+
         public void LoadPattern(String pattern)
         {            
             pattern = pattern.Trim();
@@ -44,15 +60,80 @@ namespace GameOfLife
                 rows[i].NextRow = rows[i + 1];
             }
             numberOfColumns = rows[0].GetColumnCount();
+
+            if (rows[0].IsNewRowNeeded())
+            {
+                int count = rows[0].GetColumnCount();
+                Row row = new Row(count);
+                rows[0].PreviousRow = row;
+                row.NextRow = rows[0];
+                AddRowToStart(row);
+            }
+
+            if (rows[rows.Count - 1].IsNewRowNeeded())
+            {                 
+                Row row = new Row(numberOfColumns);
+                row.PreviousRow = rows[numberOfRows - 1];
+                rows[numberOfRows - 1].NextRow = row;                
+                AddRowToEnd(row);
+            }      
+
+            if(IsNewColumnNeededAtLeft())
+            {                
+                AddNewColumnAtStart();
+                numberOfColumns++;
+            }
+            
+            if(IsNewColumnNeededAtRight())
+            {                
+                AddNewColumnAtEnd();
+                numberOfColumns++;
+            }
+             
             DecideStatusForNextGeneration();
         }
-        
+
+        private void AddNewColumnAtEnd()
+        {
+            for (int i = 0; i < numberOfRows; i++)
+                rows[i].AddColumnAtEnd();
+        }
+
+        private void AddNewColumnAtStart()
+        {
+            for (int i = 0; i < numberOfRows; i++)
+                rows[i].AddColumnAtStart();
+        }
+
         private void DecideStatusForNextGeneration()
         {
             for (int i = 0; i < numberOfRows; i++)
             {
                 rows[i].DecideStatusForRow();
             }
+        }
+
+        private bool IsNewColumnNeededAtLeft()
+        {
+            int count = 0;
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                count = rows[i].Cells[0].IsAlive() ? count + 1 : 0;
+                if (count >= 3) 
+                    return true;
+            }
+            return false;
+        }
+
+        private bool IsNewColumnNeededAtRight()
+        {
+            int count = 0;
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                count = rows[i].Cells[numberOfColumns - 1].IsAlive() ? count + 1 : 0;
+                if (count >= 3) return true;
+            }
+            return false;
         }
 
         public override String ToString()
