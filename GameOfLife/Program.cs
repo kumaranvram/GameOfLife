@@ -9,7 +9,13 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            Clock.Tick();
+            Grid grid = new Grid("X X - -\nX - - -\n- - - X\n- - X X ");
+            Console.WriteLine("Grid As given");
+            Console.WriteLine(grid.ToString());
+            grid.AdvanceToNextGeneration();
+            Console.WriteLine("Grid Output");
+            Console.WriteLine(grid.ToString());
+            Console.Read();
         }
     }
 }

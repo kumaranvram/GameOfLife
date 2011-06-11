@@ -12,6 +12,11 @@ namespace GameOfLife
             numberOfNeighborsAlive = 0;
         }
 
+        public Cell(String value) : this()
+        {
+            currentValue = value;
+            nextValue = value;
+        }
         String currentValue;
 
         public String CurrentValue
@@ -35,7 +40,7 @@ namespace GameOfLife
             set { numberOfNeighborsAlive = value; }
         }
 
-        public void SetNextValueToCurrentValue()
+        public void AdvanceToNextGeneration()
         {
             currentValue = nextValue;
         }
@@ -44,6 +49,7 @@ namespace GameOfLife
         {
             return currentValue.Contains("X");
         }
+
         public void DecideStatus()
         {
             if (numberOfNeighborsAlive < 2 || numberOfNeighborsAlive > 3)
@@ -54,7 +60,12 @@ namespace GameOfLife
             if (numberOfNeighborsAlive == 3 && (!IsAlive()))
             {
                 nextValue = "X";
-            }            
+            }
+        }
+
+        public override string ToString()
+        {
+            return currentValue;
         }
     }
 }
