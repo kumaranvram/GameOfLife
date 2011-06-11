@@ -184,7 +184,7 @@ namespace GameOfLife
             String rowString = "";
             for (int index = 0; index < cells.Count - 1; index++)
             {
-                rowString = rowString + cells[index] + "\t";
+                rowString = rowString + cells[index].CurrentValue + "\t";
             }
             rowString = rowString + cells[cells.Count - 1] + "\n";
             return rowString.ToString();

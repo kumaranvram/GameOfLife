@@ -119,8 +119,7 @@ namespace GameOfLife
             for (int i = 0; i < numberOfRows; i++)
             {
                 count = rows[i].Cells[0].IsAlive() ? count + 1 : 0;
-                if (count >= 3) 
-                    return true;
+                if (count >= 3) return true;
             }
             return false;
         }

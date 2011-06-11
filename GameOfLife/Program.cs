@@ -9,7 +9,7 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            string pattern = "X\tX\tX\t-\tX\nX\t-\tX\t-\tX\nX\tX\tX\t-\tX";
+            string pattern = "X\tX\tX\nX\tX\tX\nX\tX\tX";
             Grid grid = new Grid(pattern);
             Console.WriteLine("Grid As given");
             Console.WriteLine(pattern);
