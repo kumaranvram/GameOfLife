@@ -21,12 +21,12 @@ namespace GameOfLife
 
         public Grid(String pattern) : this()
         {
-            //this
             LoadPattern(pattern);
         }
 
         public void LoadPattern(String pattern)
         {
+            pattern = pattern.Trim();
             char[] splitPattern = "\n".ToCharArray();
             String[] rows = pattern.Split(splitPattern);
             numberOfRows = rows.Length;
@@ -36,11 +36,126 @@ namespace GameOfLife
                 cells.Add(LoadRow(rows[i], i));
             }
             numberOfColumns = cells[0].Count;
+            DecideStatusForNextGeneration();
+        }
+       
+
+        private void DecideStatusForLastRow()
+        {
+            int neighbors = 0;
+            int rowIndex = numberOfRows - 1;
+            neighbors = neighbors + (cells[rowIndex][1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex - 1][0].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex - 1][1].IsAlive() ? 1 : 0);
+            cells[rowIndex][0].NumberOfNeighborsAlive = neighbors;
+            cells[rowIndex][0].DecideStatus();
+            int columnIndex = 1;
+            for (; columnIndex < cells[0].Count - 1; columnIndex++)
+            {
+                neighbors = 0;
+                neighbors = neighbors + (cells[rowIndex][columnIndex - 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex][columnIndex + 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex - 1][columnIndex - 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex - 1][columnIndex].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex - 1][columnIndex + 1].IsAlive() ? 1 : 0);
+                cells[rowIndex][columnIndex].NumberOfNeighborsAlive = neighbors;
+                cells[rowIndex][columnIndex].DecideStatus();
+            }
+            neighbors = 0;
+            neighbors = neighbors + (cells[rowIndex][columnIndex - 1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex - 1][columnIndex].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex - 1][columnIndex - 1].IsAlive() ? 1 : 0);
+            cells[rowIndex][columnIndex].NumberOfNeighborsAlive = neighbors;
+            cells[rowIndex][columnIndex].DecideStatus();
         }
 
+        private void DecideStatusForFirstRow()
+        {
+            int neighbors = 0;
+            neighbors = neighbors + (cells[0][1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[1][0].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[1][1].IsAlive() ? 1 : 0);
+            cells[0][0].NumberOfNeighborsAlive = neighbors;
+            cells[0][0].DecideStatus();
+            int columnIndex=1;
+            for (; columnIndex < cells[0].Count - 1; columnIndex++)
+            {
+                neighbors = 0;
+                neighbors = neighbors + (cells[0][columnIndex - 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[0][columnIndex + 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[1][columnIndex - 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[1][columnIndex].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[1][columnIndex + 1].IsAlive() ? 1 : 0);
+                cells[0][columnIndex].NumberOfNeighborsAlive = neighbors;
+                cells[0][columnIndex].DecideStatus();
+            }
+            neighbors = 0;
+            neighbors = neighbors + (cells[0][columnIndex - 1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[1][columnIndex].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[1][columnIndex - 1].IsAlive() ? 1 : 0);
+            cells[0][columnIndex].NumberOfNeighborsAlive = neighbors;
+            cells[0][columnIndex].DecideStatus();
+        }
+
+        private void DecideStatusForRow(int rowIndex)
+        {
+            int neighbors = 0;
+            if (rowIndex == 0)
+            {
+                DecideStatusForFirstRow();
+                return;
+            }
+
+            if (rowIndex == (numberOfRows - 1))
+            {
+                DecideStatusForLastRow();
+                return;
+            }
+
+            neighbors = 0;
+            neighbors = neighbors + (cells[rowIndex - 1][1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex - 1][0].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex][1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex + 1][0].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex + 1][1].IsAlive() ? 1 : 0);
+            cells[rowIndex][0].NumberOfNeighborsAlive = neighbors;
+            cells[rowIndex][0].DecideStatus();
+            int columnIndex = 1;
+            for (; columnIndex < numberOfColumns - 1; columnIndex++)
+            {
+                neighbors = 0;
+                neighbors = neighbors + (cells[rowIndex - 1][columnIndex - 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex - 1][columnIndex].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex - 1][columnIndex + 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex][columnIndex - 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex][columnIndex + 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex + 1][columnIndex - 1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex + 1][columnIndex].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (cells[rowIndex + 1][columnIndex + 1].IsAlive() ? 1 : 0);
+                cells[rowIndex][columnIndex].NumberOfNeighborsAlive = neighbors;
+                cells[rowIndex][columnIndex].DecideStatus();
+            }
+            neighbors = 0;
+            neighbors = neighbors + (cells[rowIndex - 1][columnIndex].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex - 1][columnIndex - 1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex][columnIndex - 1].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex + 1][columnIndex].IsAlive() ? 1 : 0);
+            neighbors = neighbors + (cells[rowIndex + 1][columnIndex - 1].IsAlive() ? 1 : 0);
+            cells[rowIndex][columnIndex].NumberOfNeighborsAlive = neighbors;
+            cells[rowIndex][columnIndex].DecideStatus();
+        }
+
+        private void DecideStatusForNextGeneration()
+        {
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                DecideStatusForRow(i);
+            }
+        }
 
         private List<Cell> LoadRow(String rowPattern, int index)
         {
+            rowPattern = rowPattern.Trim();
             List<Cell> row = new List<Cell>();
             char[] splitPattern = " ".ToCharArray();
             String[] columns = rowPattern.Split(splitPattern);
@@ -48,6 +163,7 @@ namespace GameOfLife
             {
                 Cell cell = new Cell();
                 cell.CurrentValue = columns[i];
+                cell.NextValue = columns[i];
                 row.Add(cell);
             }
             return row;
@@ -80,18 +196,20 @@ namespace GameOfLife
             return row[index].CurrentValue;
         }
 
-        public void AdvanceToNextGeneration()
+        public void AdvanceGridToNextGeneration()
         {
-
+            for (int rowIndex = 0; rowIndex < numberOfRows; rowIndex++)
+            {
+                AdvanceRowToNextGeneration(rowIndex);
+            }
         }
 
-        private void IsNewRowRequired(List<Cell> row)
+        private void AdvanceRowToNextGeneration(int rowIndex)
         {
-        }
-
-        private void IsNewColumnRequired()
-        {
-            
+            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
+            {
+                cells[rowIndex][columnIndex].SetNextValueToCurrentValue();
+            }
         }
 
     }

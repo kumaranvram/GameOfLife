@@ -3,3 +3,8 @@ c:\users\kumaran_venkataraman\documents\visual studio 2010\Projects\GameOfLife\G
 c:\users\kumaran_venkataraman\documents\visual studio 2010\Projects\GameOfLife\GameOfLife\obj\x86\Debug\ResolveAssemblyReference.cache
 c:\users\kumaran_venkataraman\documents\visual studio 2010\Projects\GameOfLife\GameOfLife\obj\x86\Debug\GameOfLife.exe
 c:\users\kumaran_venkataraman\documents\visual studio 2010\Projects\GameOfLife\GameOfLife\obj\x86\Debug\GameOfLife.pdb
+C:\Users\Kumaran_Venkataraman\Desktop\GameOfLife\GameOfLife\obj\x86\Debug\GameOfLife.exe
+C:\Users\Kumaran_Venkataraman\Desktop\GameOfLife\GameOfLife\obj\x86\Debug\GameOfLife.pdb
+C:\Users\Kumaran_Venkataraman\Desktop\GameOfLife\GameOfLife\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Kumaran_Venkataraman\Desktop\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe
+C:\Users\Kumaran_Venkataraman\Desktop\GameOfLife\GameOfLife\bin\Debug\GameOfLife.pdb

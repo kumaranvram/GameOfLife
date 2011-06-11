@@ -9,7 +9,11 @@ namespace GameOfLife
     {
         public static void Tick()
         {
-            Grid grid = new Grid("X - -\nX - X\n");
+            Grid grid = new Grid("- - - -\n- X X X\nX X X -\n- - - -");
+            Console.WriteLine ("Grid As given");
+            Console.WriteLine(grid.ToString());
+            grid.AdvanceGridToNextGeneration();
+            Console.WriteLine ("Grid Output");
             Console.WriteLine(grid.ToString());
             Console.Read();
         }

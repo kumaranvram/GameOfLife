@@ -7,6 +7,11 @@ namespace GameOfLife
 {
     class Cell
     {
+        public Cell()
+        {
+            numberOfNeighborsAlive = 0;
+        }
+
         String currentValue;
 
         public String CurrentValue
@@ -28,6 +33,28 @@ namespace GameOfLife
         {
             get { return numberOfNeighborsAlive; }
             set { numberOfNeighborsAlive = value; }
+        }
+
+        public void SetNextValueToCurrentValue()
+        {
+            currentValue = nextValue;
+        }
+
+        public bool IsAlive()
+        {
+            return currentValue.Contains("X");
+        }
+        public void DecideStatus()
+        {
+            if (numberOfNeighborsAlive < 2 || numberOfNeighborsAlive > 3)
+            {
+                nextValue = "-";
+                return;
+            }
+            if (numberOfNeighborsAlive == 3 && (!IsAlive()))
+            {
+                nextValue = "X";
+            }            
         }
     }
 }
