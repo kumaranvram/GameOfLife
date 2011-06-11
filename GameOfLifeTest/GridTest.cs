@@ -177,6 +177,9 @@ namespace GameOfLifeTest
             Assert.AreEqual(expected, actual);                     
         }
 
+        /// <summary>
+        ///A test for IsNewColumnNeededAtRight
+        ///</summary>
         [TestMethod()]
         [DeploymentItem("GameOfLife.exe")]
         public void IsNewColumnNeededAtRightTest1()
