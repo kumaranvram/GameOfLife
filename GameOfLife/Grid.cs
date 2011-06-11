@@ -38,6 +38,7 @@ namespace GameOfLife
             numberOfColumns = cells[0].Count;
         }
 
+
         private List<Cell> LoadRow(String rowPattern, int index)
         {
             List<Cell> row = new List<Cell>();
