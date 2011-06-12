@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="003aa9f1-84a8-4985-9725-2f59a1f414fd" name="Kumaran_Venkataraman@MYSHEC51628L 2011-06-12 12:27:06" runUser="ITLINFOSYS\Kumaran_Venkataraman" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="5734b058-9c95-45c5-97c6-71e8d52a6fdb">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Kumaran_Venkataraman_MYSHEC51628L 2011-06-12 12_27_06">
+      <DeploymentItem filename="C:\Users\Kumaran_Venkataraman\Desktop\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-12T12:27:06.6036338+05:30" queuing="2011-06-12T12:27:08.5247437+05:30" start="2011-06-12T12:27:08.6277496+05:30" finish="2011-06-12T12:27:10.2888446+05:30" />
+  <ResultSummary outcome="Warning">
+    <Counters total="22" executed="22" passed="22" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="MYSHEC51628L" outcome="Warning" timestamp="2011-06-12T12:27:07.3846785+05:30">
+        <Text>Deployment is currently disabled. The deployment item 'GameOfLife.exe' on test 'GameOfLifeTest.GridTest.IsNewColumnNeededAtRightTest' was not deployed.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="IsNewColumnNeededAtRightTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="dee993b8-67a3-f4e3-ae75-726789bfb67e">
+      <DeploymentItems>
+        <DeploymentItem filename="GameOfLife.exe" />
+      </DeploymentItems>
+      <Execution id="048745ca-9445-4279-9c9e-18c1d38c2f5c" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsNewColumnNeededAtRightTest" />
+    </UnitTest>
+    <UnitTest name="ToStringTest5" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="2658872e-3e03-e7fe-ed96-53b63ff4c738">
+      <Execution id="cb0540f4-a67a-4f4d-ac24-166f8dcd3d4c" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest5" />
+    </UnitTest>
+    <UnitTest name="IsAliveTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="63c8518e-2439-ebd2-e4e0-6f94830146f5">
+      <Execution id="5de0adca-bd82-413c-9964-3dc709654115" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.CellTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsAliveTest" />
+    </UnitTest>
+    <UnitTest name="GridConstructorTest1" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="fc035a48-e9e4-82dd-f1d2-c8aff44b15b0">
+      <Execution id="bfd38693-f343-442c-b24f-359478ebc624" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GridConstructorTest1" />
+    </UnitTest>
+    <UnitTest name="ToStringTest1" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="f8d721a4-0f11-8174-bc5b-485fc41a33c5">
+      <Execution id="bad745d9-4dbb-4404-9110-ad8cf4d698f9" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest1" />
+    </UnitTest>
+    <UnitTest name="IsNewRowNeededTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="0a17ab39-6946-b5c3-5bdd-daa86e51c740">
+      <Execution id="93d009a9-b6b7-4be5-acb2-2ce34e7b12cd" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.RowTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsNewRowNeededTest" />
+    </UnitTest>
+    <UnitTest name="GetColumnCountTest1" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="432f37a5-9508-df5f-9c22-f80ebe5efcc0">
+      <Execution id="a70e1619-bb21-48d1-bad8-a67de8e1a3aa" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.RowTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetColumnCountTest1" />
+    </UnitTest>
+    <UnitTest name="GetColumnCountTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="beae48f1-8b10-deea-96c9-33953c80edf1">
+      <Execution id="63a7e5ec-ce14-450b-8de1-8625ff2cddf0" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.RowTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetColumnCountTest" />
+    </UnitTest>
+    <UnitTest name="IsNewColumnNeededAtLeftTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="3444a78d-6ed0-77bc-f380-8049bbaa388d">
+      <DeploymentItems>
+        <DeploymentItem filename="GameOfLife.exe" />
+      </DeploymentItems>
+      <Execution id="cfb5dcf2-67f4-40be-a68d-884f371ef485" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsNewColumnNeededAtLeftTest" />
+    </UnitTest>
+    <UnitTest name="IsAliveTest2" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="29c44247-3ad8-d615-778b-c1ec6adcbfa0">
+      <Execution id="b3ce1520-8e03-4436-b7d6-73392d3b77be" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.CellTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsAliveTest2" />
+    </UnitTest>
+    <UnitTest name="RowConstructorTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="e0a2cea7-fed0-6f35-625a-1cbe1a6564e4">
+      <Execution id="9755c03a-dd96-4939-bb15-8139e229786b" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.RowTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RowConstructorTest" />
+    </UnitTest>
+    <UnitTest name="ToStringTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="4e67a92b-ae19-d9e5-0299-f763dfc4b6d8">
+      <Execution id="d37d6fc6-3833-4b07-a026-fe0068510d47" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.CellTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest" />
+    </UnitTest>
+    <UnitTest name="CellConstructorTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="a8c10fb5-c137-e6c1-92f7-8f1fb4c59deb">
+      <Execution id="f242a147-0ef5-4f71-bff3-dbe3cf412594" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.CellTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CellConstructorTest" />
+    </UnitTest>
+    <UnitTest name="ToStringTest3" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="1d33b44e-569c-2798-5327-5449e017a583">
+      <Execution id="7b4672db-b5f6-43e1-9fc5-6e97a82e9e96" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest3" />
+    </UnitTest>
+    <UnitTest name="IsNewColumnNeededAtLeftTest1" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="ac032d1b-affc-94c0-c9e0-91dc39a52878">
+      <DeploymentItems>
+        <DeploymentItem filename="GameOfLife.exe" />
+      </DeploymentItems>
+      <Execution id="e9b5b4ea-3a29-4302-a3bd-c911f917fb2e" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsNewColumnNeededAtLeftTest1" />
+    </UnitTest>
+    <UnitTest name="ToStringTest2" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="b8ff4e9a-2465-67cd-8dbd-8b9e678b7f10">
+      <Execution id="9a412e61-7a39-4e0d-bce4-fff1e09554f8" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest2" />
+    </UnitTest>
+    <UnitTest name="ToStringTest6" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="ca373f64-4752-067d-da01-80ebd5e1c37e">
+      <Execution id="8858b28d-5997-47ac-95fb-f69716ca6a03" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest6" />
+    </UnitTest>
+    <UnitTest name="ToStringTest" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="6b4f5743-f93c-e414-be2f-c2f2fce3a5c2">
+      <Execution id="3bafdb38-2bc5-4b91-9208-5f8066e81e8b" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.RowTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest" />
+    </UnitTest>
+    <UnitTest name="IsNewRowNeededTest1" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="7074d83c-bec0-987d-6d75-c3da324212d2">
+      <Execution id="fb2938b2-4671-4532-ab2e-1d4523c41df0" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.RowTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsNewRowNeededTest1" />
+    </UnitTest>
+    <UnitTest name="ToStringTest4" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="df48ed7f-e6c8-b9d2-e542-4837559b246d">
+      <Execution id="f34074b2-6e67-41f0-80e6-43bdd1efefe2" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest4" />
+    </UnitTest>
+    <UnitTest name="ToStringTest7" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="acf86805-7912-ae76-5e60-498d52ead98f">
+      <Execution id="f8449a3d-640a-4bf9-8a6c-873b63639e24" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest7" />
+    </UnitTest>
+    <UnitTest name="IsNewColumnNeededAtRightTest1" storage="c:\users\kumaran_venkataraman\desktop\gameoflife\gameoflifetest\bin\debug\gameoflifetest.dll" id="b23fc4bb-6bc1-4a97-081e-2ab90d1dbb11">
+      <DeploymentItems>
+        <DeploymentItem filename="GameOfLife.exe" />
+      </DeploymentItems>
+      <Execution id="9b6dcf2e-acc1-4bd9-ba8b-e00ba5750162" />
+      <TestMethod codeBase="C:/Users/Kumaran_Venkataraman/Desktop/GameOfLife/GameOfLifeTest/bin/Debug/GameOfLifeTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GameOfLifeTest.GridTest, GameOfLifeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsNewColumnNeededAtRightTest1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="f8d721a4-0f11-8174-bc5b-485fc41a33c5" executionId="bad745d9-4dbb-4404-9110-ad8cf4d698f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8ff4e9a-2465-67cd-8dbd-8b9e678b7f10" executionId="9a412e61-7a39-4e0d-bce4-fff1e09554f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d33b44e-569c-2798-5327-5449e017a583" executionId="7b4672db-b5f6-43e1-9fc5-6e97a82e9e96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df48ed7f-e6c8-b9d2-e542-4837559b246d" executionId="f34074b2-6e67-41f0-80e6-43bdd1efefe2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2658872e-3e03-e7fe-ed96-53b63ff4c738" executionId="cb0540f4-a67a-4f4d-ac24-166f8dcd3d4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ca373f64-4752-067d-da01-80ebd5e1c37e" executionId="8858b28d-5997-47ac-95fb-f69716ca6a03" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="acf86805-7912-ae76-5e60-498d52ead98f" executionId="f8449a3d-640a-4bf9-8a6c-873b63639e24" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dee993b8-67a3-f4e3-ae75-726789bfb67e" executionId="048745ca-9445-4279-9c9e-18c1d38c2f5c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b23fc4bb-6bc1-4a97-081e-2ab90d1dbb11" executionId="9b6dcf2e-acc1-4bd9-ba8b-e00ba5750162" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3444a78d-6ed0-77bc-f380-8049bbaa388d" executionId="cfb5dcf2-67f4-40be-a68d-884f371ef485" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac032d1b-affc-94c0-c9e0-91dc39a52878" executionId="e9b5b4ea-3a29-4302-a3bd-c911f917fb2e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fc035a48-e9e4-82dd-f1d2-c8aff44b15b0" executionId="bfd38693-f343-442c-b24f-359478ebc624" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b4f5743-f93c-e414-be2f-c2f2fce3a5c2" executionId="3bafdb38-2bc5-4b91-9208-5f8066e81e8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0a2cea7-fed0-6f35-625a-1cbe1a6564e4" executionId="9755c03a-dd96-4939-bb15-8139e229786b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="beae48f1-8b10-deea-96c9-33953c80edf1" executionId="63a7e5ec-ce14-450b-8de1-8625ff2cddf0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="432f37a5-9508-df5f-9c22-f80ebe5efcc0" executionId="a70e1619-bb21-48d1-bad8-a67de8e1a3aa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a17ab39-6946-b5c3-5bdd-daa86e51c740" executionId="93d009a9-b6b7-4be5-acb2-2ce34e7b12cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7074d83c-bec0-987d-6d75-c3da324212d2" executionId="fb2938b2-4671-4532-ab2e-1d4523c41df0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8c10fb5-c137-e6c1-92f7-8f1fb4c59deb" executionId="f242a147-0ef5-4f71-bff3-dbe3cf412594" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63c8518e-2439-ebd2-e4e0-6f94830146f5" executionId="5de0adca-bd82-413c-9964-3dc709654115" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="29c44247-3ad8-d615-778b-c1ec6adcbfa0" executionId="b3ce1520-8e03-4436-b7d6-73392d3b77be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e67a92b-ae19-d9e5-0299-f763dfc4b6d8" executionId="d37d6fc6-3833-4b07-a026-fe0068510d47" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="bad745d9-4dbb-4404-9110-ad8cf4d698f9" testId="f8d721a4-0f11-8174-bc5b-485fc41a33c5" testName="ToStringTest1" computerName="MYSHEC51628L" duration="00:00:00.0370611" startTime="2011-06-12T12:27:08.7807584+05:30" endTime="2011-06-12T12:27:09.5558027+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bad745d9-4dbb-4404-9110-ad8cf4d698f9">
+    </UnitTestResult>
+    <UnitTestResult executionId="9a412e61-7a39-4e0d-bce4-fff1e09554f8" testId="b8ff4e9a-2465-67cd-8dbd-8b9e678b7f10" testName="ToStringTest2" computerName="MYSHEC51628L" duration="00:00:00.0003582" startTime="2011-06-12T12:27:09.5818042+05:30" endTime="2011-06-12T12:27:09.6028054+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9a412e61-7a39-4e0d-bce4-fff1e09554f8">
+    </UnitTestResult>
+    <UnitTestResult executionId="7b4672db-b5f6-43e1-9fc5-6e97a82e9e96" testId="1d33b44e-569c-2798-5327-5449e017a583" testName="ToStringTest3" computerName="MYSHEC51628L" duration="00:00:00.0003505" startTime="2011-06-12T12:27:09.6138060+05:30" endTime="2011-06-12T12:27:09.6258067+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7b4672db-b5f6-43e1-9fc5-6e97a82e9e96">
+    </UnitTestResult>
+    <UnitTestResult executionId="f34074b2-6e67-41f0-80e6-43bdd1efefe2" testId="df48ed7f-e6c8-b9d2-e542-4837559b246d" testName="ToStringTest4" computerName="MYSHEC51628L" duration="00:00:00.0009490" startTime="2011-06-12T12:27:09.6368073+05:30" endTime="2011-06-12T12:27:09.6498081+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f34074b2-6e67-41f0-80e6-43bdd1efefe2">
+    </UnitTestResult>
+    <UnitTestResult executionId="cb0540f4-a67a-4f4d-ac24-166f8dcd3d4c" testId="2658872e-3e03-e7fe-ed96-53b63ff4c738" testName="ToStringTest5" computerName="MYSHEC51628L" duration="00:00:00.0011343" startTime="2011-06-12T12:27:09.6648089+05:30" endTime="2011-06-12T12:27:09.6788097+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb0540f4-a67a-4f4d-ac24-166f8dcd3d4c">
+    </UnitTestResult>
+    <UnitTestResult executionId="8858b28d-5997-47ac-95fb-f69716ca6a03" testId="ca373f64-4752-067d-da01-80ebd5e1c37e" testName="ToStringTest6" computerName="MYSHEC51628L" duration="00:00:00.0003957" startTime="2011-06-12T12:27:09.6908104+05:30" endTime="2011-06-12T12:27:09.7038112+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8858b28d-5997-47ac-95fb-f69716ca6a03">
+    </UnitTestResult>
+    <UnitTestResult executionId="f8449a3d-640a-4bf9-8a6c-873b63639e24" testId="acf86805-7912-ae76-5e60-498d52ead98f" testName="ToStringTest7" computerName="MYSHEC51628L" duration="00:00:00.0003515" startTime="2011-06-12T12:27:09.7228122+05:30" endTime="2011-06-12T12:27:09.7368130+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8449a3d-640a-4bf9-8a6c-873b63639e24">
+    </UnitTestResult>
+    <UnitTestResult executionId="048745ca-9445-4279-9c9e-18c1d38c2f5c" testId="dee993b8-67a3-f4e3-ae75-726789bfb67e" testName="IsNewColumnNeededAtRightTest" computerName="MYSHEC51628L" duration="00:00:00.0198271" startTime="2011-06-12T12:27:09.7488137+05:30" endTime="2011-06-12T12:27:09.7808156+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="048745ca-9445-4279-9c9e-18c1d38c2f5c">
+    </UnitTestResult>
+    <UnitTestResult executionId="9b6dcf2e-acc1-4bd9-ba8b-e00ba5750162" testId="b23fc4bb-6bc1-4a97-081e-2ab90d1dbb11" testName="IsNewColumnNeededAtRightTest1" computerName="MYSHEC51628L" duration="00:00:00.0005194" startTime="2011-06-12T12:27:09.7978165+05:30" endTime="2011-06-12T12:27:09.8118173+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b6dcf2e-acc1-4bd9-ba8b-e00ba5750162">
+    </UnitTestResult>
+    <UnitTestResult executionId="cfb5dcf2-67f4-40be-a68d-884f371ef485" testId="3444a78d-6ed0-77bc-f380-8049bbaa388d" testName="IsNewColumnNeededAtLeftTest" computerName="MYSHEC51628L" duration="00:00:00.0007560" startTime="2011-06-12T12:27:09.8238180+05:30" endTime="2011-06-12T12:27:09.8388189+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cfb5dcf2-67f4-40be-a68d-884f371ef485">
+    </UnitTestResult>
+    <UnitTestResult executionId="e9b5b4ea-3a29-4302-a3bd-c911f917fb2e" testId="ac032d1b-affc-94c0-c9e0-91dc39a52878" testName="IsNewColumnNeededAtLeftTest1" computerName="MYSHEC51628L" duration="00:00:00.0004963" startTime="2011-06-12T12:27:09.8538197+05:30" endTime="2011-06-12T12:27:09.8668205+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9b5b4ea-3a29-4302-a3bd-c911f917fb2e">
+    </UnitTestResult>
+    <UnitTestResult executionId="bfd38693-f343-442c-b24f-359478ebc624" testId="fc035a48-e9e4-82dd-f1d2-c8aff44b15b0" testName="GridConstructorTest1" computerName="MYSHEC51628L" duration="00:00:00.0003207" startTime="2011-06-12T12:27:09.8798212+05:30" endTime="2011-06-12T12:27:09.8918219+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bfd38693-f343-442c-b24f-359478ebc624">
+    </UnitTestResult>
+    <UnitTestResult executionId="3bafdb38-2bc5-4b91-9208-5f8066e81e8b" testId="6b4f5743-f93c-e414-be2f-c2f2fce3a5c2" testName="ToStringTest" computerName="MYSHEC51628L" duration="00:00:00.0005625" startTime="2011-06-12T12:27:09.9028225+05:30" endTime="2011-06-12T12:27:09.9148232+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3bafdb38-2bc5-4b91-9208-5f8066e81e8b">
+    </UnitTestResult>
+    <UnitTestResult executionId="9755c03a-dd96-4939-bb15-8139e229786b" testId="e0a2cea7-fed0-6f35-625a-1cbe1a6564e4" testName="RowConstructorTest" computerName="MYSHEC51628L" duration="00:00:00.0003254" startTime="2011-06-12T12:27:09.9258238+05:30" endTime="2011-06-12T12:27:09.9408247+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9755c03a-dd96-4939-bb15-8139e229786b">
+    </UnitTestResult>
+    <UnitTestResult executionId="63a7e5ec-ce14-450b-8de1-8625ff2cddf0" testId="beae48f1-8b10-deea-96c9-33953c80edf1" testName="GetColumnCountTest" computerName="MYSHEC51628L" duration="00:00:00.0014474" startTime="2011-06-12T12:27:09.9598258+05:30" endTime="2011-06-12T12:27:09.9808270+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63a7e5ec-ce14-450b-8de1-8625ff2cddf0">
+    </UnitTestResult>
+    <UnitTestResult executionId="a70e1619-bb21-48d1-bad8-a67de8e1a3aa" testId="432f37a5-9508-df5f-9c22-f80ebe5efcc0" testName="GetColumnCountTest1" computerName="MYSHEC51628L" duration="00:00:00.0003341" startTime="2011-06-12T12:27:10.0298298+05:30" endTime="2011-06-12T12:27:10.0578314+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a70e1619-bb21-48d1-bad8-a67de8e1a3aa">
+    </UnitTestResult>
+    <UnitTestResult executionId="93d009a9-b6b7-4be5-acb2-2ce34e7b12cd" testId="0a17ab39-6946-b5c3-5bdd-daa86e51c740" testName="IsNewRowNeededTest" computerName="MYSHEC51628L" duration="00:00:00.0003377" startTime="2011-06-12T12:27:10.0738323+05:30" endTime="2011-06-12T12:27:10.0878331+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93d009a9-b6b7-4be5-acb2-2ce34e7b12cd">
+    </UnitTestResult>
+    <UnitTestResult executionId="fb2938b2-4671-4532-ab2e-1d4523c41df0" testId="7074d83c-bec0-987d-6d75-c3da324212d2" testName="IsNewRowNeededTest1" computerName="MYSHEC51628L" duration="00:00:00.0003233" startTime="2011-06-12T12:27:10.1028340+05:30" endTime="2011-06-12T12:27:10.1158347+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fb2938b2-4671-4532-ab2e-1d4523c41df0">
+    </UnitTestResult>
+    <UnitTestResult executionId="f242a147-0ef5-4f71-bff3-dbe3cf412594" testId="a8c10fb5-c137-e6c1-92f7-8f1fb4c59deb" testName="CellConstructorTest" computerName="MYSHEC51628L" duration="00:00:00.0005522" startTime="2011-06-12T12:27:10.1298355+05:30" endTime="2011-06-12T12:27:10.1418362+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f242a147-0ef5-4f71-bff3-dbe3cf412594">
+    </UnitTestResult>
+    <UnitTestResult executionId="5de0adca-bd82-413c-9964-3dc709654115" testId="63c8518e-2439-ebd2-e4e0-6f94830146f5" testName="IsAliveTest" computerName="MYSHEC51628L" duration="00:00:00.0003151" startTime="2011-06-12T12:27:10.1498367+05:30" endTime="2011-06-12T12:27:10.1638375+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5de0adca-bd82-413c-9964-3dc709654115">
+    </UnitTestResult>
+    <UnitTestResult executionId="b3ce1520-8e03-4436-b7d6-73392d3b77be" testId="29c44247-3ad8-d615-778b-c1ec6adcbfa0" testName="IsAliveTest2" computerName="MYSHEC51628L" duration="00:00:00.0003089" startTime="2011-06-12T12:27:10.1778383+05:30" endTime="2011-06-12T12:27:10.1908390+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3ce1520-8e03-4436-b7d6-73392d3b77be">
+    </UnitTestResult>
+    <UnitTestResult executionId="d37d6fc6-3833-4b07-a026-fe0068510d47" testId="4e67a92b-ae19-d9e5-0299-f763dfc4b6d8" testName="ToStringTest" computerName="MYSHEC51628L" duration="00:00:00.0003105" startTime="2011-06-12T12:27:10.2028397+05:30" endTime="2011-06-12T12:27:10.2158404+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d37d6fc6-3833-4b07-a026-fe0068510d47">
+    </UnitTestResult>
+  </Results>
+</TestRun>

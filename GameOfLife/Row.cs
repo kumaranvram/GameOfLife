@@ -7,6 +7,9 @@ namespace GameOfLife
 {
     class Row
     {
+        /// <summary>
+        /// The array of cells which form the row
+        /// </summary>
         private List<Cell> cells;
 
         internal List<Cell> Cells
@@ -14,6 +17,9 @@ namespace GameOfLife
             get { return cells; }
             set { cells = value; }
         }
+        /// <summary>
+        /// Points to the previous row of the current row
+        /// </summary>
         private Row previousRow;
 
         internal Row PreviousRow
@@ -21,6 +27,10 @@ namespace GameOfLife
             get { return previousRow; }
             set { previousRow = value; }
         }
+
+        /// <summary>
+        /// Points to the next row of the current row
+        /// </summary>
         private Row nextRow;
 
         internal Row NextRow
@@ -29,11 +39,18 @@ namespace GameOfLife
             set { nextRow = value; }
         }        
         
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public Row()
         {
             cells = new List<Cell>();            
         }
 
+        /// <summary>
+        /// Constructor that initializes the pattern for the row
+        /// </summary>
+        /// <param name="rowPattern">Pattern for the row</param>
         public Row(String rowPattern) : this()
         {
             rowPattern = rowPattern.Trim();
@@ -46,6 +63,10 @@ namespace GameOfLife
             }
         }
 
+        /// <summary>
+        /// Creates an empty row with dead cells for the number of columns passed as argument
+        /// </summary>
+        /// <param name="cellsCount">Number of columns</param>
         public Row(int cellsCount) : this()
         {
             for (int i = 0; i < cellsCount; i++)
@@ -55,130 +76,110 @@ namespace GameOfLife
             }
         }
 
+        /// <summary>
+        /// Checks if a new row is needed for regeneration
+        /// </summary>
+        /// <returns>returns true if needed else returns false</returns>
         public bool IsNewRowNeeded()
         {
+            //returns true if the row has 3 consecutive living cells
             return ToString().Contains("X X X");
         }
 
+        /// <summary>
+        /// Decides the status for each of the cell in the row, by calculating neighbors
+        /// </summary>
         public void DecideStatusForRow()
         {
-            int neighbors = 0;
-            if (previousRow == null)
+            int neighbors = 0;                
+            //Calculates the neighbor for the first cell of the row
+            if (previousRow != null)
             {
-                DecideStatusForFirstRow();
-                return;
+                neighbors = neighbors + (previousRow.Cells[1].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (previousRow.Cells[0].IsAlive() ? 1 : 0);
             }
-
-            if (nextRow == null)
-            {
-                DecideStatusForLastRow();
-                return;
-            }
-                        
-            neighbors = 0;
-            neighbors = neighbors + (previousRow.Cells[1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (previousRow.Cells[0].IsAlive() ? 1 : 0);
             neighbors = neighbors + (cells[1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[0].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[1].IsAlive() ? 1 : 0);
+            if (nextRow != null)
+            {
+                neighbors = neighbors + (nextRow.Cells[0].IsAlive() ? 1 : 0);
+                neighbors = neighbors + (nextRow.Cells[1].IsAlive() ? 1 : 0);
+            }
             cells[0].NumberOfNeighborsAlive = neighbors;
-            cells[0].DecideStatus();
+            //Checks for the neighbors for cells from index 1 to last but one
             int columnIndex = 1;
             for (; columnIndex < cells.Count - 1; columnIndex++)
             {
                 neighbors = 0;
-                neighbors = neighbors + (previousRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (previousRow.Cells[columnIndex].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (previousRow.Cells[columnIndex + 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (cells[columnIndex - 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (cells[columnIndex + 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (nextRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (nextRow.cells[columnIndex].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (nextRow.cells[columnIndex + 1].IsAlive() ? 1 : 0);
+                if (previousRow != null)
+                {
+                    neighbors = neighbors + (previousRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
+                    neighbors = neighbors + (previousRow.IsCellAlive(columnIndex) ? 1 : 0);
+                    neighbors = neighbors + (previousRow.IsCellAlive(columnIndex + 1) ? 1 : 0);
+                }
+                neighbors = neighbors + (IsCellAlive(columnIndex -1) ? 1 : 0);
+                neighbors = neighbors + (IsCellAlive(columnIndex +1) ? 1 : 0);
+                if (nextRow != null)
+                {
+                    neighbors = neighbors + (nextRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
+                    neighbors = neighbors + (nextRow.IsCellAlive(columnIndex) ? 1 : 0);
+                    neighbors = neighbors + (nextRow.IsCellAlive(columnIndex + 1) ? 1 : 0);
+                }
                 cells[columnIndex].NumberOfNeighborsAlive = neighbors;
-                cells[columnIndex].DecideStatus();
             }
+            //Check for the neighbors for the last cell
             neighbors = 0;
-            neighbors = neighbors + (previousRow.Cells[columnIndex].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (previousRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (cells[columnIndex - 1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[columnIndex].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-            cells[columnIndex].NumberOfNeighborsAlive = neighbors;
-            cells[columnIndex].DecideStatus();
-        }
-
-        private void DecideStatusForFirstRow()
-        {
-            int neighbors = 0;
-            neighbors = neighbors + (cells[1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[0].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[1].IsAlive() ? 1 : 0);
-            cells[0].NumberOfNeighborsAlive = neighbors;
-            cells[0].DecideStatus();
-            int columnIndex = 1;
-            for (; columnIndex < cells.Count - 1; columnIndex++)
+            if (previousRow != null)
             {
-                neighbors = 0;
-                neighbors = neighbors + (cells[columnIndex - 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (cells[columnIndex + 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (nextRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (nextRow.Cells[columnIndex].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (nextRow.Cells[columnIndex + 1].IsAlive() ? 1 : 0);
-                cells[columnIndex].NumberOfNeighborsAlive = neighbors;
-                cells[columnIndex].DecideStatus();
+                neighbors = neighbors + (previousRow.IsCellAlive(columnIndex) ? 1 : 0);
+                neighbors = neighbors + (previousRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
             }
-            neighbors = 0;
             neighbors = neighbors + (cells[columnIndex - 1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[columnIndex].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (nextRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-            cells[columnIndex].NumberOfNeighborsAlive = neighbors;
-            cells[columnIndex].DecideStatus();
-        }
-
-        private void  DecideStatusForLastRow()
-        {
-            int neighbors = 0;            
-            neighbors = neighbors + (cells[1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (previousRow.Cells[0].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (previousRow.Cells[1].IsAlive() ? 1 : 0);
-            cells[0].NumberOfNeighborsAlive = neighbors;
-            cells[0].DecideStatus();
-            int columnIndex = 1;
-            for (; columnIndex < cells.Count - 1; columnIndex++)
+            if (nextRow != null)
             {
-                neighbors = 0;
-                neighbors = neighbors + (cells[columnIndex - 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (cells[columnIndex + 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (previousRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (previousRow.Cells[columnIndex].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (previousRow.Cells[columnIndex + 1].IsAlive() ? 1 : 0);
-                cells[columnIndex].NumberOfNeighborsAlive = neighbors;
-                cells[columnIndex].DecideStatus();
+                neighbors = neighbors + (nextRow.IsCellAlive(columnIndex) ? 1 : 0);
+                neighbors = neighbors + (nextRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
             }
-            neighbors = 0;
-            neighbors = neighbors + (cells[columnIndex - 1].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (previousRow.Cells[columnIndex].IsAlive() ? 1 : 0);
-            neighbors = neighbors + (previousRow.Cells[columnIndex - 1].IsAlive() ? 1 : 0);
-            cells[columnIndex].NumberOfNeighborsAlive = neighbors;
-            cells[columnIndex].DecideStatus();
-        }
+            cells[columnIndex].NumberOfNeighborsAlive = neighbors;            
+        } 
 
-        public void AddColumnAtStart()
+        /// <summary>
+        /// Adds a new non living cell to the left
+        /// </summary>
+        public void AddColumnToLeft()
         {            
             Cell cell = new Cell("-");
             cells.Insert(0, cell);            
         }
 
-        public void AddColumnAtEnd()
+        /// <summary>
+        /// Adds a new non living cell to the right
+        /// </summary>
+        public void AddColumnToRight()
         {
             Cell cell = new Cell("-");
             cells.Add(cell);
         }
 
+
+        /// <summary>
+        /// Checks whether the cell at the given index is alive or dead
+        /// </summary>
+        /// <param name="index">index of the cell</param>
+        /// <returns>true if the cell is alive and false otherwise</returns>
+        public bool IsCellAlive(int index)
+        {
+            return cells[index].IsAlive();
+        }
+
+        /// <summary>
+        /// Returns the string representation of the row
+        /// i.e the cells seperated by a white space and finally by a new line
+        /// </summary>
+        /// <returns>String representation of the row</returns>
         public override String ToString()
         {
             String rowString = "";
+            //Append each of the cell value and a white space
             for (int index = 0; index < cells.Count - 1; index++)
             {
                 rowString = rowString + cells[index].CurrentValue + " ";
@@ -187,11 +188,19 @@ namespace GameOfLife
             return rowString.ToString();
         }
 
+
+        /// <summary>
+        /// Returns the number of columns/cells in the row
+        /// </summary>
+        /// <returns>Number of columns</returns>
         public Int32 GetColumnCount()
         {
             return cells.Count;
         }
 
+        /// <summary>
+        /// Takes each of the cell in the row to the next generation
+        /// </summary>
         public void AdvanceToNextGeneration()
         {
             for (int i = 0; i < cells.Count; i++)
