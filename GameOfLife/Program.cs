@@ -9,17 +9,13 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            string pattern = "- X X X\nX X X -";
+            string pattern = "- - - X X - - -\n- X - - - - X -\nX - - - - - - X\n- X - - - - X -\n- - - X X - - -\n";
             Grid grid = new Grid(pattern);
             Console.WriteLine("Grid As given");
             Console.WriteLine(grid.ToString());            
-            for (int i = 0; i < 21; i++)
-            {
-                Console.WriteLine("Generation  {0}: ", (i+1));                
-                grid.AdvanceToNextGeneration();
-                Console.WriteLine(grid.ToString());
-                Console.Read();
-            }            
+            grid.AdvanceToNextGeneration();
+            Console.WriteLine(grid.ToString());
+            Console.ReadLine();
         }
     }
 }

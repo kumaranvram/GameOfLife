@@ -95,14 +95,14 @@ namespace GameOfLife
             //Calculates the neighbor for the first cell of the row
             if (previousRow != null)
             {
-                neighbors = neighbors + (previousRow.Cells[1].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (previousRow.Cells[0].IsAlive() ? 1 : 0);
+                neighbors += (previousRow.Cells[1].IsAlive() ? 1 : 0);
+                neighbors += (previousRow.Cells[0].IsAlive() ? 1 : 0);
             }
-            neighbors = neighbors + (cells[1].IsAlive() ? 1 : 0);
+            neighbors += (cells[1].IsAlive() ? 1 : 0);
             if (nextRow != null)
             {
-                neighbors = neighbors + (nextRow.Cells[0].IsAlive() ? 1 : 0);
-                neighbors = neighbors + (nextRow.Cells[1].IsAlive() ? 1 : 0);
+                neighbors += (nextRow.Cells[0].IsAlive() ? 1 : 0);
+                neighbors += (nextRow.Cells[1].IsAlive() ? 1 : 0);
             }
             cells[0].NumberOfNeighborsAlive = neighbors;
             //Checks for the neighbors for cells from index 1 to last but one
@@ -112,17 +112,17 @@ namespace GameOfLife
                 neighbors = 0;
                 if (previousRow != null)
                 {
-                    neighbors = neighbors + (previousRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
-                    neighbors = neighbors + (previousRow.IsCellAlive(columnIndex) ? 1 : 0);
-                    neighbors = neighbors + (previousRow.IsCellAlive(columnIndex + 1) ? 1 : 0);
+                    neighbors += (previousRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
+                    neighbors += (previousRow.IsCellAlive(columnIndex) ? 1 : 0);
+                    neighbors += (previousRow.IsCellAlive(columnIndex + 1) ? 1 : 0);
                 }
-                neighbors = neighbors + (IsCellAlive(columnIndex -1) ? 1 : 0);
-                neighbors = neighbors + (IsCellAlive(columnIndex +1) ? 1 : 0);
+                neighbors += (IsCellAlive(columnIndex -1) ? 1 : 0);
+                neighbors += (IsCellAlive(columnIndex +1) ? 1 : 0);
                 if (nextRow != null)
                 {
-                    neighbors = neighbors + (nextRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
-                    neighbors = neighbors + (nextRow.IsCellAlive(columnIndex) ? 1 : 0);
-                    neighbors = neighbors + (nextRow.IsCellAlive(columnIndex + 1) ? 1 : 0);
+                    neighbors += (nextRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
+                    neighbors += (nextRow.IsCellAlive(columnIndex) ? 1 : 0);
+                    neighbors += (nextRow.IsCellAlive(columnIndex + 1) ? 1 : 0);
                 }
                 cells[columnIndex].NumberOfNeighborsAlive = neighbors;
             }
@@ -130,18 +130,26 @@ namespace GameOfLife
             neighbors = 0;
             if (previousRow != null)
             {
-                neighbors = neighbors + (previousRow.IsCellAlive(columnIndex) ? 1 : 0);
-                neighbors = neighbors + (previousRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
+                neighbors += (previousRow.IsCellAlive(columnIndex) ? 1 : 0);
+                neighbors += (previousRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
             }
-            neighbors = neighbors + (cells[columnIndex - 1].IsAlive() ? 1 : 0);
+            neighbors += (cells[columnIndex - 1].IsAlive() ? 1 : 0);
             if (nextRow != null)
             {
-                neighbors = neighbors + (nextRow.IsCellAlive(columnIndex) ? 1 : 0);
-                neighbors = neighbors + (nextRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
+                neighbors += (nextRow.IsCellAlive(columnIndex) ? 1 : 0);
+                neighbors += (nextRow.IsCellAlive(columnIndex - 1) ? 1 : 0);
             }
             cells[columnIndex].NumberOfNeighborsAlive = neighbors;            
-        } 
+        }
 
+        /// <summary>
+        /// Checks whether the row is empty or not
+        /// </summary>
+        /// <returns>true if empty, false otherwise</returns>
+        private bool IsEmpty()
+        {
+            return !ToString().Contains("X");
+        }
         /// <summary>
         /// Adds a new non living cell to the left
         /// </summary>
@@ -178,14 +186,15 @@ namespace GameOfLife
         /// <returns>String representation of the row</returns>
         public override String ToString()
         {
-            String rowString = "";
+            
+            String rowString = "";            
             //Append each of the cell value and a white space
             for (int index = 0; index < cells.Count - 1; index++)
-            {
-                rowString = rowString + cells[index].CurrentValue + " ";
+            {                
+                rowString = rowString + cells[index].CurrentValue + " ";                
             }
             rowString = rowString + cells[cells.Count - 1] + "\n";
-            return rowString.ToString();
+            return rowString;
         }
 
 
